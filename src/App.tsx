@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import logoimg from'./assets/logo.png'
+import logoimg from './assets/logo.png'
 
 function App() {
  
@@ -26,7 +26,9 @@ frases:["Siga os bons e aprenda com eles",
  }
  ]
 
-
+function handleswitcategory(index:number){
+  setCategoriaSelecionada(index)
+}
 
   return (
     <div className="container">
@@ -42,7 +44,9 @@ frases:["Siga os bons e aprenda com eles",
         borderWidth:item.nome === allfrases[categoriaSelecionada].nome ? 2 : 0,
         borderColor: "#007bff"
       }}
-      >
+      onClick={()=> handleswitcategory(index)
+
+      }>
         {item.nome}
         </button>
     

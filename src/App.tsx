@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import logoimg from './assets/logo.png'
+import logoimg from'./assets/logo.png'
 
 function App() {
  
@@ -29,7 +29,11 @@ frases:["Siga os bons e aprenda com eles",
 function handleswitcategory(index:number){
   setCategoriaSelecionada(index)
 }
+function gerarFrase(){
+let numerodefrases = Math.floor(Math.random() * allfrases[categoriaSelecionada].frases.length)
+setTextoFrase(allfrases[categoriaSelecionada].frases[numerodefrases])
 
+}
   return (
     <div className="container">
      <img src={logoimg} alt="" className='logo' />
@@ -53,7 +57,7 @@ function handleswitcategory(index:number){
  ))}
 </section>
 <button className='buttom-frase' 
->Gerar Frases</button>
+onClick={gerarFrase}>Gerar Frases</button>
 
 {textofrase !== "" && <p className='textofrase'>"{textofrase}"</p>}
         </div>
